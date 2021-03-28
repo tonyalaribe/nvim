@@ -41,7 +41,9 @@ return require('packer').startup(function()
     vim.g.nvim_tree_quit_on_open = 1
   end}
   -- use 'ratazzi/blackboard.vim'
-  use 'lisposter/vim-blackboard'
+  -- use 'lisposter/vim-blackboard'
+  use 'ratazzi/blackboard.vim'
+  use 'christianchiarulli/nvcode-color-schemes.vim'
   use 'rakr/vim-one'
   use 'freeo/vim-kalisi'
   use 'nvim-lua/completion-nvim'

@@ -154,7 +154,7 @@ vim.cmd('nmap <silent> <F3> :NvimTreeToggle<CR>')
 
 
 vim.api.nvim_exec([[
-silent! colorscheme kalisi
+silent! colorscheme gruvbox 
 
 nnoremap <silent> <leader>b :Buffers<CR>
 au ColorScheme * highlight ColorColumn ctermbg=0 guibg=darkgrey
@@ -172,11 +172,52 @@ augroup fmt
   autocmd BufWritePre * undojoin | Neoformat
 augroup END
 
+au ColorScheme * hi Cursor guifg=Black guibg=Yellow
+au ColorScheme * hi Question guifg=springgreen
+au ColorScheme * hi Search guibg=#0099ff guifg=White
+au ColorScheme * hi Visual gui=none guifg=khaki guibg=olivedrab
+au ColorScheme * hi TSTitle guifg=#ff9900 gui=bold ctermfg=208 cterm=bold
+au ColorScheme * hi Title guifg=#ff9900 gui=bold ctermfg=208 cterm=bold
+au ColorScheme * hi TSStatement guifg=#ff6600 ctermfg=202
+au ColorScheme * hi htmlStatement guifg=#61c3fe ctermfg=39
+au ColorScheme * hi TSString guifg=#99ec5c ctermfg=155
+au ColorScheme * hi TSComment guifg=grey35 ctermfg=240
+au ColorScheme * hi TSCommentDoc guifg=grey50 ctermfg=244
+au ColorScheme * hi TSConditional guifg=#ffee14 ctermfg=226
+au ColorScheme * hi TSConstant guifg=#cbfe29 ctermfg=190
+au ColorScheme * hi TSSpecial guifg=#86A7D0 ctermfg=110
+au ColorScheme * hi TSIdentifier guifg=#ff9900 gui=bold ctermfg=208 cterm=bold
+au ColorScheme * hi TSInclude guifg=#ffde00 ctermfg=220
+au ColorScheme * hi TSPreProc guifg=grey ctermfg=grey
+au ColorScheme * hi TSOperator gui=bold guifg=#ff9900 ctermfg=208 cterm=bold
+au ColorScheme * hi TSDefine guifg=#ffde00 gui=bold ctermfg=220 cterm=bold
+au ColorScheme * hi TSType guifg=#61c3fe ctermfg=39
+au ColorScheme * hi Function guifg=#ffde00 gui=NONE ctermfg=220
+au ColorScheme * hi TSStructure gui=bold guifg=#ff6600 ctermfg=202 cterm=bold
+au ColorScheme * hi TSIgnore guifg=grey40 ctermfg=241
+au ColorScheme * hi TSStatusLineNC guibg=#c2bfa5 guifg=grey40 gui=none ctermfg=241
+au ColorScheme * hi TSStatusLine guibg=#c2bfa5 guifg=black gui=bold
+au ColorScheme * hi TSTodo guifg=orangered guibg=yellow2
+au ColorScheme * hi TSError guifg=#990000 guibg=#ffeaea ctermfg=88 ctermbg=224
+au ColorScheme * hi TSSpellErrors guifg=White guibg=Red
+au ColorScheme * hi TSWarningMsg guifg=#990000 ctermfg=88
+au ColorScheme * hi TSErrorMsg guifg=#990000 guibg=#ffeaea ctermfg=88 ctermbg=224
+
+
+au ColorScheme * highlight TSText guifg=#99ec5c
+au ColorScheme * highlight TSFuncBuiltin guifg=#ffde00
+au ColorScheme * highlight TSFunction guifg=#ffde00
+au ColorScheme * highlight TSFuncMacro guifg=#ffde00
+au ColorScheme * highlight TSParameter guifg=#9CDCFE
+
+
+
 ]], false)
 
-vim.api.nvim_command('au ColorScheme * hi Normal guibg=NONE ctermbg=NONE')
+vim.api.nvim_command('au ColorScheme * hi Normal guibg=NONE ctermbg=NONE guifg=#ffffff')
 vim.api.nvim_command('au ColorScheme * hi NonText guibg=NONE ctermbg=NONE')
 
 vim.g.bubbly_tabline = 1
 vim.g.nvim_tree_auto_open = 1
+vim.g.nvcode_termcolors=256
 

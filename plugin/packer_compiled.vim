@@ -36,8 +36,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/barbar.nvim"
   },
+  ["blackboard.vim"] = {
+    loaded = true,
+    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/blackboard.vim"
+  },
   ["bubbly.nvim"] = {
-    config = { "\27LJ\2\n‹\2\0\0\2\0\a\0\r6\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0004\1\0\0=\1\4\0006\0\0\0009\0\1\0005\1\6\0=\1\5\0K\0\1\0\1\f\0\0\tmode\rtruncate\tpath\vbranch\fsignify\bcoc\fdivisor\rfiletype\rprogress\27lsp_status.diagnostics\24lsp_status.messages\22bubbly_statusline\19bubbly_palette\1\0\2\15foreground\nblack\15background\tNone\26bubbly_inactive_color\6g\bvim\0" },
+    config = { "\27LJ\2\n‹\2\0\0\2\0\a\0\r6\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0004\1\0\0=\1\4\0006\0\0\0009\0\1\0005\1\6\0=\1\5\0K\0\1\0\1\f\0\0\tmode\rtruncate\tpath\vbranch\fsignify\bcoc\fdivisor\rfiletype\rprogress\27lsp_status.diagnostics\24lsp_status.messages\22bubbly_statusline\19bubbly_palette\1\0\2\15background\tNone\15foreground\nblack\26bubbly_inactive_color\6g\bvim\0" },
     loaded = true,
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/bubbly.nvim"
   },
@@ -73,6 +77,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/neovim-sensible"
   },
+  ["nvcode-color-schemes.vim"] = {
+    loaded = true,
+    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/nvcode-color-schemes.vim"
+  },
   ["nvim-colorizer.lua"] = {
     loaded = true,
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
@@ -102,10 +110,6 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/opt/packer.nvim"
-  },
-  ["vim-blackboard"] = {
-    loaded = true,
-    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/vim-blackboard"
   },
   ["vim-clap"] = {
     loaded = true,
@@ -149,10 +153,10 @@ _G.packer_plugins = {
   }
 }
 
+-- Config for: bubbly.nvim
+try_loadstring("\27LJ\2\n‹\2\0\0\2\0\a\0\r6\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0004\1\0\0=\1\4\0006\0\0\0009\0\1\0005\1\6\0=\1\5\0K\0\1\0\1\f\0\0\tmode\rtruncate\tpath\vbranch\fsignify\bcoc\fdivisor\rfiletype\rprogress\27lsp_status.diagnostics\24lsp_status.messages\22bubbly_statusline\19bubbly_palette\1\0\2\15background\tNone\15foreground\nblack\26bubbly_inactive_color\6g\bvim\0", "config", "bubbly.nvim")
 -- Config for: nvim-tree.lua
 try_loadstring("\27LJ\2\nˆ\2\0\0\2\0\t\0\0256\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0006\0\0\0009\0\1\0005\1\5\0=\1\4\0006\0\0\0009\0\1\0)\1\1\0=\1\6\0006\0\0\0009\0\1\0)\1\1\0=\1\a\0006\0\0\0009\0\1\0)\1\1\0=\1\b\0K\0\1\0\27nvim_tree_quit_on_open\25nvim_tree_auto_close\28nvim_tree_disable_netrw\1\4\0\0\t.git\17node_modules\v.cache\21nvim_tree_ignore\21nvim_tree_git_hl\24nvim_tree_auto_open\6g\bvim\0", "config", "nvim-tree.lua")
--- Config for: bubbly.nvim
-try_loadstring("\27LJ\2\n‹\2\0\0\2\0\a\0\r6\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0004\1\0\0=\1\4\0006\0\0\0009\0\1\0005\1\6\0=\1\5\0K\0\1\0\1\f\0\0\tmode\rtruncate\tpath\vbranch\fsignify\bcoc\fdivisor\rfiletype\rprogress\27lsp_status.diagnostics\24lsp_status.messages\22bubbly_statusline\19bubbly_palette\1\0\2\15foreground\nblack\15background\tNone\26bubbly_inactive_color\6g\bvim\0", "config", "bubbly.nvim")
 END
 
 catch
