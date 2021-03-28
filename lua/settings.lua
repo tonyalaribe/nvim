@@ -154,10 +154,10 @@ vim.cmd('nmap <silent> <F3> :NvimTreeToggle<CR>')
 
 
 vim.api.nvim_exec([[
-silent! colorscheme blackboard
+silent! colorscheme kalisi
 
 nnoremap <silent> <leader>b :Buffers<CR>
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+au ColorScheme * highlight ColorColumn ctermbg=0 guibg=darkgrey
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -167,10 +167,15 @@ nmap ga <Plug>(EasyAlign)
 
 nnoremap <silent> <leader>f :Rg -m<CR>
 
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
+
 ]], false)
 
-vim.api.nvim_command('hi Normal guibg=NONE ctermbg=NONE')
-vim.api.nvim_command('hi NonText guibg=NONE ctermbg=NONE')
+vim.api.nvim_command('au ColorScheme * hi Normal guibg=NONE ctermbg=NONE')
+vim.api.nvim_command('au ColorScheme * hi NonText guibg=NONE ctermbg=NONE')
 
 vim.g.bubbly_tabline = 1
 vim.g.nvim_tree_auto_open = 1

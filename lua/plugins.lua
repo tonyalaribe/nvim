@@ -53,13 +53,14 @@ return require('packer').startup(function()
   use {'prettier/vim-prettier', run = 'yarn install'}
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use 'norcalli/nvim-colorizer.lua'
+  use 'romgrk/doom-one.vim'
   use {
     'ojroques/nvim-lspfuzzy',
     requires = {
-      -- {'junegunn/fzf', dir = '~/.fzf', run = './install --all'},
-      -- {'junegunn/fzf.vim'},  -- to enable preview (optional)
-      {'lotabout/skim', dir = '~/.skim', run = './install --all'},
-      {'lotabout/skim.vim'},  -- to enable preview (optional)
+      {'junegunn/fzf', dir = '~/.fzf', run = './install --all'},
+      {'junegunn/fzf.vim'},  -- to enable preview (optional)
+      -- {'lotabout/skim', dir = '~/.skim', run = './install --all'},
+      -- {'lotabout/skim.vim'},  -- to enable preview (optional)
     },
   }
   use 'mhinz/vim-startify'
