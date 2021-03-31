@@ -108,7 +108,7 @@ local function load_options()
     number         = true;
     colorcolumn    = "80";
     foldenable     = true;
-    signcolumn     = "no";
+    signcolumn     = "number";
     conceallevel   = 2;
     concealcursor  = "niv";
   }
@@ -172,7 +172,12 @@ augroup fmt
   autocmd BufWritePre * undojoin | Neoformat
 augroup END
 
+highlight link CompeDocumentation NormalFloat
 
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 
 ]], false)
