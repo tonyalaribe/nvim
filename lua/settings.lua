@@ -57,7 +57,7 @@ local function load_options()
     ruler          = false;
     scrolloff      = 2;
     sessionoptions = "curdir,help,tabpages,winsize";
-    signcolumn     = "no";
+    signcolumn     = "yes";
     shada          = "!,'300,<50,@100,s10,h";
     shiftround     = true;
     shortmess      = "aoOTIcF";
@@ -108,7 +108,7 @@ local function load_options()
     number         = true;
     colorcolumn    = "80";
     foldenable     = true;
-    signcolumn     = "number";
+    signcolumn     = "yes";
     conceallevel   = 2;
     concealcursor  = "niv";
   }

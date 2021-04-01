@@ -32,6 +32,7 @@ return require('packer').startup(function()
   use 'jeffkreeftmeijer/neovim-sensible'
   use 'neovim/nvim-lspconfig'
   use 'kyazdani42/nvim-web-devicons'
+  use 'airblade/vim-rooter'
   use {'kyazdani42/nvim-tree.lua', config = function()
     vim.g.nvim_tree_auto_open = 1
     vim.g.nvim_tree_git_hl = 1
@@ -46,7 +47,7 @@ return require('packer').startup(function()
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
   use 'nvim-lua/lsp-status.nvim'
-  use 'sbdchd/neoformat'
+  -- use 'sbdchd/neoformat'
   use {'prettier/vim-prettier', run = 'yarn install'}
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use 'norcalli/nvim-colorizer.lua'
