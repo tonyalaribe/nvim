@@ -2,19 +2,19 @@ local execute = vim.api.nvim_command
 local fn = vim.fn
 
 local nvim_lsp = require('lspconfig')
--- local completion = require('completion')
+local completion = require('completion')
 local lsp_status = require('lsp-status')
 lsp_status.register_progress()
 
 
 local on_attach = function(client, bufnr)
-  -- completion.on_attach(client, bufnr)
+  completion.on_attach(client, bufnr)
   lsp_status.on_attach(client, bufnr)
 
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
-  -- buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
@@ -81,6 +81,7 @@ for _, lsp in ipairs(servers) do
 end
 
 
+require('lspkind').init({})
 require('lspfuzzy').setup {}
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {'javascript', 'go', 'html', 'css', 'rust', 'typescript', 'bash'},
@@ -93,29 +94,29 @@ require'nvim-treesitter.configs'.setup {
 }
 
 
-require'compe'.setup {
-  enabled = true;
-  autocomplete = true;
-  debug = false;
-  min_length = 1;
-  preselect = 'enable';
-  throttle_time = 80;
-  source_timeout = 200;
-  incomplete_delay = 400;
-  max_abbr_width = 100;
-  max_kind_width = 100;
-  max_menu_width = 100;
-  documentation = true;
+-- require'compe'.setup {
+--   enabled = true;
+--   autocomplete = true;
+--   debug = false;
+--   min_length = 1;
+--   preselect = 'enable';
+--   throttle_time = 80;
+--   source_timeout = 200;
+--   incomplete_delay = 400;
+--   max_abbr_width = 100;
+--   max_kind_width = 100;
+--   max_menu_width = 100;
+--   documentation = true;
 
-  source = {
-    path = true;
-    buffer = true;
-    calc = true;
-    nvim_lsp = true;
-    nvim_lua = true;
-    vsnip = true;
-  };
-}
+--   source = {
+--     path = true;
+--     buffer = true;
+--     calc = true;
+--     nvim_lsp = true;
+--     nvim_lua = true;
+--     vsnip = true;
+--   };
+-- }
 
 
 --
@@ -124,47 +125,50 @@ require'compe'.setup {
 --
 --
 --
-local t = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
+-- local t = function(str)
+--   return vim.api.nvim_replace_termcodes(str, true, true, true)
+-- end
 
-local check_back_space = function()
-    local col = vim.fn.col('.') - 1
-    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-        return true
-    else
-        return false
-    end
-end
+-- local check_back_space = function()
+--     local col = vim.fn.col('.') - 1
+--     if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+--         return true
+--     else
+--         return false
+--     end
+-- end
 
--- Use (s-)tab to:
---- move to prev/next item in completion menuone
---- jump to prev/next snippet's placeholder
-_G.tab_complete = function()
-  if vim.fn.pumvisible() == 1 then
-    return t "<C-n>"
-  elseif vim.fn.call("vsnip#available", {1}) == 1 then
-    return t "<Plug>(vsnip-expand-or-jump)"
-  elseif check_back_space() then
-    return t "<Tab>"
-  else
-    return vim.fn['compe#complete']()
-  end
-end
-_G.s_tab_complete = function()
-  if vim.fn.pumvisible() == 1 then
-    return t "<C-p>"
-  elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
-    return t "<Plug>(vsnip-jump-prev)"
-  else
-    return t "<S-Tab>"
-  end
-end
+-- -- Use (s-)tab to:
+-- --- move to prev/next item in completion menuone
+-- --- jump to prev/next snippet's placeholder
+-- _G.tab_complete = function()
+--   if vim.fn.pumvisible() == 1 then
+--     return t "<C-n>"
+--   elseif vim.fn.call("vsnip#available", {1}) == 1 then
+--     return t "<Plug>(vsnip-expand-or-jump)"
+--   elseif check_back_space() then
+--     return t "<Tab>"
+--   else
+--     return vim.fn['compe#complete']()
+--   end
+-- end
+-- _G.s_tab_complete = function()
+--   if vim.fn.pumvisible() == 1 then
+--     return t "<C-p>"
+--   elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
+--     return t "<Plug>(vsnip-jump-prev)"
+--   else
+--     return t "<S-Tab>"
+--   end
+-- end
 
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+-- vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+-- vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+-- vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+-- vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
 
-require'snippets'.use_suggested_mappings()
+-- require'snippets'.use_suggested_mappings()
+
+
+--  Support nvim lua tab completion
