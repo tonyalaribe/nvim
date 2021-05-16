@@ -54,6 +54,7 @@ return require('packer').startup(function()
   use 'mhinz/vim-startify'
   use 'romgrk/barbar.nvim'
   use 'vim-scripts/indentLine.vim'
+  use 'neovimhaskell/haskell-vim'
   -- use 'junegunn/vim-easy-align'
   -- use {'mg979/vim-visual-multi', branch = 'master'}
   -- use 'norcalli/snippets.nvim'
