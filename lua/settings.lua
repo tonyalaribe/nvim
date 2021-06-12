@@ -154,7 +154,7 @@ vim.cmd('nmap <silent> <F3> :NvimTreeToggle<CR>')
 
 
 vim.api.nvim_exec([[
-silent! colorscheme base16-onedark
+" silent! colorscheme base16-onedark
 
 nnoremap <silent> <leader>b :Buffers<CR>
 " au ColorScheme * highlight ColorColumn ctermbg=0 guibg=black

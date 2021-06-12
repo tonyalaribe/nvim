@@ -28,7 +28,7 @@ end
 return require('packer').startup(function()
 	-- Packer can manage itself as an optional plugin
 	use {'wbthomason/packer.nvim', opt = true}
-
+  use 'norcalli/nvim.lua'
   use 'jeffkreeftmeijer/neovim-sensible'
   use 'neovim/nvim-lspconfig'
   use 'kyazdani42/nvim-web-devicons'
@@ -41,7 +41,8 @@ return require('packer').startup(function()
     vim.g.nvim_tree_auto_close = 0
     vim.g.nvim_tree_quit_on_open = 0
   end}
-  use 'chriskempson/base16-vim'
+  use 'siduck76/nvim-base16.lua'
+  -- use 'chriskempson/base16-vim'
   -- use 'christianchiarulli/nvcode-color-schemes.vim'
   use 'nvim-lua/completion-nvim'
   use 'tpope/vim-commentary'
