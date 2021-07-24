@@ -84,7 +84,7 @@ end
 require('lspkind').init({})
 require('lspfuzzy').setup {}
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {'javascript', 'go', 'html', 'css', 'rust', 'typescript', 'bash'},
+  ensure_installed = {'javascript', 'go', 'html', 'css', 'rust', 'typescript', 'bash','haskell'},
   highlight = {
     enable = true
   },
@@ -92,7 +92,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
-
+require'nvim-treesitter.install'.compilers = { "gcc-11" }
 
 -- require'compe'.setup {
 --   enabled = true;
