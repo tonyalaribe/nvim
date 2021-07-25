@@ -73,7 +73,7 @@ end
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = { "rust_analyzer", "tsserver", "gopls", "hls" }
+local servers = { "rust_analyzer", "tsserver", "gopls", "hls", }
 local capabilities = lsp_status.capabilities
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 for _, lsp in ipairs(servers) do
