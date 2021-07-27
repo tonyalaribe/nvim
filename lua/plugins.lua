@@ -56,7 +56,7 @@ return require('packer').startup(function()
   use 'romgrk/barbar.nvim'
   use 'vim-scripts/indentLine.vim'
   use 'neovimhaskell/haskell-vim'
-  use 'parsonsmatt/intero-neovim'
+  -- use 'parsonsmatt/intero-neovim'
   -- use 'junegunn/vim-easy-align'
   -- use {'mg979/vim-visual-multi', branch = 'master'}
   -- use 'norcalli/snippets.nvim'
@@ -67,6 +67,10 @@ return require('packer').startup(function()
     config = function()
       local saga = require 'lspsaga'
     end
+  }
+  use {
+    'ndmitchell/ghcid',
+    rtp = 'plugins/nvim',
   }
   use {
     'nvim-telescope/telescope.nvim',
