@@ -33,6 +33,7 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   use 'kyazdani42/nvim-web-devicons'
   use 'airblade/vim-rooter'
+  use 'brooth/far.vim'
   use {'kyazdani42/nvim-tree.lua', config = function()
     vim.g.nvim_tree_auto_open = 1
     vim.g.nvim_tree_git_hl = 1
