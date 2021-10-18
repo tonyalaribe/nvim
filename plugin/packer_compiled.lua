@@ -74,17 +74,33 @@ _G.packer_plugins = {
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/barbar.nvim"
   },
   ["bubbly.nvim"] = {
-    config = { "\27LJ\2\n–\2\0\0\2\0\6\0\t6\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0005\1\5\0=\1\4\0K\0\1\0\1\n\0\0\tmode\rtruncate\tpath\vbranch\fsignify\bcoc\fdivisor\rfiletype\rprogress\22bubbly_statusline\1\0\f\14lightgrey\f#57595e\15foreground\f#c5cdd9\nwhite\f#c5cdd9\tcyan\f#5dbbc1\nblack\f#3e4249\vpurple\f#d38aea\tblue\f#6cb6eb\vyellow\f#deb974\ngreen\f#a0c980\bred\f#ec7279\rdarkgrey\f#404247\15background\f#34343c\19bubbly_palette\6g\bvim\0" },
+    config = { "\27LJ\2\n–\2\0\0\2\0\6\0\t6\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0005\1\5\0=\1\4\0K\0\1\0\1\n\0\0\tmode\rtruncate\tpath\vbranch\fsignify\bcoc\fdivisor\rfiletype\rprogress\22bubbly_statusline\1\0\f\nwhite\f#c5cdd9\vyellow\f#deb974\14lightgrey\f#57595e\ngreen\f#a0c980\bred\f#ec7279\rdarkgrey\f#404247\nblack\f#3e4249\15background\f#34343c\15foreground\f#c5cdd9\tcyan\f#5dbbc1\vpurple\f#d38aea\tblue\f#6cb6eb\19bubbly_palette\6g\bvim\0" },
     loaded = true,
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/bubbly.nvim"
   },
-  ["completion-nvim"] = {
+  ["cmp-buffer"] = {
     loaded = true,
-    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/completion-nvim"
+    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/cmp-path"
+  },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
   },
   ["far.vim"] = {
     loaded = true,
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/far.vim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/friendly-snippets"
   },
   fzf = {
     loaded = true,
@@ -128,13 +144,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/neoformat"
   },
-  ["neovim-sensible"] = {
+  ["nvim-cmp"] = {
     loaded = true,
-    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/neovim-sensible"
-  },
-  ["nvim-base16.lua"] = {
-    loaded = true,
-    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/nvim-base16.lua"
+    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -161,6 +173,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/nvim.lua"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
@@ -177,6 +193,11 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["trouble.nvim"] = {
+    config = { "\27LJ\2\nS\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\15auto_close\2\14auto_open\2\nsetup\ftrouble\frequire\0" },
+    loaded = true,
+    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/trouble.nvim"
   },
   ["vim-commentary"] = {
     loaded = true,
@@ -197,6 +218,10 @@ _G.packer_plugins = {
   ["vim-startify"] = {
     loaded = true,
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/vim-startify"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   }
 }
 
@@ -213,14 +238,18 @@ time([[Config for lspsaga.nvim]], false)
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\n€\1\0\0\3\0\t\0\0156\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0005\1\4\0=\1\3\0006\0\5\0'\2\6\0B\0\2\0029\0\a\0005\2\b\0B\0\2\1K\0\1\0\1\0\4\18disable_netrw\2\18open_on_setup\2\15auto_close\2\17hijack_netrw\2\nsetup\14nvim-tree\frequire\1\4\0\0\t.git\17node_modules\v.cache\21nvim_tree_ignore\21nvim_tree_git_hl\6g\bvim\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
+-- Config for: bubbly.nvim
+time([[Config for bubbly.nvim]], true)
+try_loadstring("\27LJ\2\n–\2\0\0\2\0\6\0\t6\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0005\1\5\0=\1\4\0K\0\1\0\1\n\0\0\tmode\rtruncate\tpath\vbranch\fsignify\bcoc\fdivisor\rfiletype\rprogress\22bubbly_statusline\1\0\f\nwhite\f#c5cdd9\vyellow\f#deb974\14lightgrey\f#57595e\ngreen\f#a0c980\bred\f#ec7279\rdarkgrey\f#404247\nblack\f#3e4249\15background\f#34343c\15foreground\f#c5cdd9\tcyan\f#5dbbc1\vpurple\f#d38aea\tblue\f#6cb6eb\19bubbly_palette\6g\bvim\0", "config", "bubbly.nvim")
+time([[Config for bubbly.nvim]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: bubbly.nvim
-time([[Config for bubbly.nvim]], true)
-try_loadstring("\27LJ\2\n–\2\0\0\2\0\6\0\t6\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0005\1\5\0=\1\4\0K\0\1\0\1\n\0\0\tmode\rtruncate\tpath\vbranch\fsignify\bcoc\fdivisor\rfiletype\rprogress\22bubbly_statusline\1\0\f\14lightgrey\f#57595e\15foreground\f#c5cdd9\nwhite\f#c5cdd9\tcyan\f#5dbbc1\nblack\f#3e4249\vpurple\f#d38aea\tblue\f#6cb6eb\vyellow\f#deb974\ngreen\f#a0c980\bred\f#ec7279\rdarkgrey\f#404247\15background\f#34343c\19bubbly_palette\6g\bvim\0", "config", "bubbly.nvim")
-time([[Config for bubbly.nvim]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\2\nS\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\15auto_close\2\14auto_open\2\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

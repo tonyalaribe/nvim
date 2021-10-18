@@ -57,7 +57,7 @@ local function load_options()
     ruler          = false;
     scrolloff      = 2;
     sessionoptions = "curdir,help,tabpages,winsize";
-    signcolumn     = "yes";
+    signcolumn     = "number";
     shada          = "!,'300,<50,@100,s10,h";
     shiftround     = true;
     shortmess      = "aoOTIcF";
@@ -105,12 +105,14 @@ local function load_options()
     breakindentopt = "shift:2,min:20";
     wrap           = false;
     linebreak      = true;
-    number         = true;
+    number         = false;
     colorcolumn    = "80";
     foldenable     = true;
-    signcolumn     = "yes";
+    signcolumn     = "number";
     conceallevel   = 2;
     concealcursor  = "niv";
+    norelativenumber = true;
+    cursorline = true;
   }
 
   -- if global.is_mac then
@@ -217,8 +219,6 @@ nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-p> :TmuxNavigatePrevious<cr>
 
 
-set norelativenumber
-
 set lazyredraw            " improve scrolling performance when navigating through large results
 set regexpengine=1        " use old regexp engine
 set ignorecase smartcase  " ignore case only when the pattern contains no capital letters
@@ -230,6 +230,17 @@ vnoremap <silent> <Find-Shortcut>  :Farf<cr>
 " shortcut for far.vim replace
 nnoremap <silent> <Replace-Shortcut>  :Farr<cr>
 vnoremap <silent> <Replace-Shortcut>  :Farr<cr>
+
+
+nnoremap <leader>xx <cmd>TroubleToggle<cr>
+nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
+nnoremap <leader>xd <cmd>TroubleToggle lsp_document_diagnostics<cr>
+nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
+nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
+nnoremap gR <cmd>TroubleToggle lsp_references<cr>
+
+"let g:onedark_style = 'deep'
+"colorscheme onedark
 ]], false)
 
 -- vim.api.nvim_command('au ColorScheme * hi Normal guibg=NONE ctermbg=NONE guifg=#ffffff')
@@ -237,3 +248,8 @@ vnoremap <silent> <Replace-Shortcut>  :Farr<cr>
 
 vim.g.bubbly_tabline = 1
 vim.g.nvcode_termcolors=256
+
+vim.cmd('set norelativenumber')
+vim.cmd('set nornu')
+
+require('onedark').load()

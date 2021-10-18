@@ -29,7 +29,6 @@ return require('packer').startup(function()
 	-- Packer can manage itself as an optional plugin
 	use {'wbthomason/packer.nvim', opt = true}
   use 'norcalli/nvim.lua'
-  use 'jeffkreeftmeijer/neovim-sensible'
   use 'neovim/nvim-lspconfig'
   use 'kyazdani42/nvim-web-devicons'
   use 'airblade/vim-rooter'
@@ -44,10 +43,25 @@ return require('packer').startup(function()
       auto_close = true,
     }
   end}
-  use 'siduck76/nvim-base16.lua'
+  use 'olimorris/onedark.nvim'
+  -- use 'navarasu/onedark.nvim'
+  --
+  -- use 'RRethy/nvim-base16'
+
+  -- use 'siduck76/nvim-base16.lua'
   -- use 'chriskempson/base16-vim'
   -- use 'christianchiarulli/nvcode-color-schemes.vim'
-  use 'nvim-lua/completion-nvim'
+
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-path'
+  -- For vsnip user.
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
+  use "rafamadriz/friendly-snippets"
+
+
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
   use 'nvim-lua/lsp-status.nvim'
@@ -66,7 +80,7 @@ return require('packer').startup(function()
   -- use 'hrsh7th/nvim-compe'
   use "onsails/lspkind-nvim"
   use {
-    'glepnir/lspsaga.nvim',
+    'tami5/lspsaga.nvim',
     config = function()
       local saga = require 'lspsaga'
     end
@@ -123,4 +137,17 @@ return require('packer').startup(function()
       'progress',
     }
   end}
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+        auto_open = true,
+        auto_close = true,
+      }
+    end
+  }
   end)
