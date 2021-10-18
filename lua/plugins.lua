@@ -86,15 +86,15 @@ return require('packer').startup(function()
       {'junegunn/fzf.vim'},  -- to enable preview (optional)
     },
   }
-  -- use {
-  --   'lewis6991/gitsigns.nvim',
-  --   requires = {
-  --     'nvim-lua/plenary.nvim'
-  --   },
-  --   config = function()
-  --     require('gitsigns').setup()
-  --   end
-  -- }
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
   use {'datwaft/bubbly.nvim', config = function()
     -- Here you can add the configuration for the plugin
     vim.g.bubbly_palette = {
