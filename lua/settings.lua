@@ -149,7 +149,7 @@ vim.cmd('vnoremap d "_d')
 vim.cmd('vmap < <gv')
 vim.cmd('vmap > >gv')
 
-vim.cmd('let g:nvim_tree_git_hl = 1')
+-- vim.cmd('let g:nvim_tree_git_hl = 1')
 vim.cmd('nmap <silent> <F3> :NvimTreeToggle<CR>')
 
 
@@ -236,5 +236,4 @@ vnoremap <silent> <Replace-Shortcut>  :Farr<cr>
 -- vim.api.nvim_command('au ColorScheme * hi NonText guibg=NONE ctermbg=NONE')
 
 vim.g.bubbly_tabline = 1
-vim.g.nvim_tree_auto_open = 1
 vim.g.nvcode_termcolors=256

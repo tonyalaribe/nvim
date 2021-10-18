@@ -4,7 +4,7 @@ local cmd = vim.cmd
 cmd "syntax on"
 
 local base16 = require "base16"
-base16(base16.themes["onedark"], true)
+-- base16(base16.themes["onedark"], true)
 
 -- blankline
 

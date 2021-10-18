@@ -35,12 +35,14 @@ return require('packer').startup(function()
   use 'airblade/vim-rooter'
   use 'brooth/far.vim'
   use {'kyazdani42/nvim-tree.lua', config = function()
-    vim.g.nvim_tree_auto_open = 1
     vim.g.nvim_tree_git_hl = 1
     vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache' }
-    vim.g.nvim_tree_disable_netrw = 1
-    vim.g.nvim_tree_auto_close = 0
-    vim.g.nvim_tree_quit_on_open = 0
+    require'nvim-tree'.setup {
+      open_on_setup = true,
+      disable_netrw = true,
+      hijack_netrw        = true,
+      auto_close = true,
+    }
   end}
   use 'siduck76/nvim-base16.lua'
   -- use 'chriskempson/base16-vim'
@@ -84,15 +86,15 @@ return require('packer').startup(function()
       {'junegunn/fzf.vim'},  -- to enable preview (optional)
     },
   }
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    },
-    config = function()
-      require('gitsigns').setup()
-    end
-  }
+  -- use {
+  --   'lewis6991/gitsigns.nvim',
+  --   requires = {
+  --     'nvim-lua/plenary.nvim'
+  --   },
+  --   config = function()
+  --     require('gitsigns').setup()
+  --   end
+  -- }
   use {'datwaft/bubbly.nvim', config = function()
     -- Here you can add the configuration for the plugin
     vim.g.bubbly_palette = {

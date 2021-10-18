@@ -74,13 +74,17 @@ _G.packer_plugins = {
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/barbar.nvim"
   },
   ["bubbly.nvim"] = {
-    config = { "\27LJ\2\n–\2\0\0\2\0\6\0\t6\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0005\1\5\0=\1\4\0K\0\1\0\1\n\0\0\tmode\rtruncate\tpath\vbranch\fsignify\bcoc\fdivisor\rfiletype\rprogress\22bubbly_statusline\1\0\f\15foreground\f#c5cdd9\nwhite\f#c5cdd9\tcyan\f#5dbbc1\14lightgrey\f#57595e\vpurple\f#d38aea\tblue\f#6cb6eb\vyellow\f#deb974\ngreen\f#a0c980\bred\f#ec7279\rdarkgrey\f#404247\nblack\f#3e4249\15background\f#34343c\19bubbly_palette\6g\bvim\0" },
+    config = { "\27LJ\2\n–\2\0\0\2\0\6\0\t6\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0005\1\5\0=\1\4\0K\0\1\0\1\n\0\0\tmode\rtruncate\tpath\vbranch\fsignify\bcoc\fdivisor\rfiletype\rprogress\22bubbly_statusline\1\0\f\ngreen\f#a0c980\bred\f#ec7279\rdarkgrey\f#404247\nblack\f#3e4249\14lightgrey\f#57595e\15foreground\f#c5cdd9\nwhite\f#c5cdd9\tcyan\f#5dbbc1\vpurple\f#d38aea\tblue\f#6cb6eb\vyellow\f#deb974\15background\f#34343c\19bubbly_palette\6g\bvim\0" },
     loaded = true,
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/bubbly.nvim"
   },
   ["completion-nvim"] = {
     loaded = true,
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/completion-nvim"
+  },
+  ["far.vim"] = {
+    loaded = true,
+    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/far.vim"
   },
   fzf = {
     loaded = true,
@@ -93,11 +97,6 @@ _G.packer_plugins = {
   ghcid = {
     loaded = true,
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/ghcid/plugins/nvim"
-  },
-  ["gitsigns.nvim"] = {
-    config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
-    loaded = true,
-    path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
   ["haskell-vim"] = {
     loaded = true,
@@ -141,7 +140,7 @@ _G.packer_plugins = {
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/nvim-lspfuzzy"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\2\nà\2\0\0\2\0\t\0\0256\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0006\0\0\0009\0\1\0005\1\5\0=\1\4\0006\0\0\0009\0\1\0)\1\1\0=\1\6\0006\0\0\0009\0\1\0)\1\0\0=\1\a\0006\0\0\0009\0\1\0)\1\0\0=\1\b\0K\0\1\0\27nvim_tree_quit_on_open\25nvim_tree_auto_close\28nvim_tree_disable_netrw\1\4\0\0\t.git\17node_modules\v.cache\21nvim_tree_ignore\21nvim_tree_git_hl\24nvim_tree_auto_open\6g\bvim\0" },
+    config = { "\27LJ\2\n€\1\0\0\3\0\t\0\0156\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0005\1\4\0=\1\3\0006\0\5\0'\2\6\0B\0\2\0029\0\a\0005\2\b\0B\0\2\1K\0\1\0\1\0\4\18disable_netrw\2\18open_on_setup\2\15auto_close\2\17hijack_netrw\2\nsetup\14nvim-tree\frequire\1\4\0\0\t.git\17node_modules\v.cache\21nvim_tree_ignore\21nvim_tree_git_hl\6g\bvim\0" },
     loaded = true,
     path = "/Users/tonyalaribe/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
@@ -205,18 +204,14 @@ time([[Runtimepath customization]], false)
 time([[Config for lspsaga.nvim]], true)
 try_loadstring("\27LJ\2\n'\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\2K\0\1\0\flspsaga\frequire\0", "config", "lspsaga.nvim")
 time([[Config for lspsaga.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\nà\2\0\0\2\0\t\0\0256\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0006\0\0\0009\0\1\0005\1\5\0=\1\4\0006\0\0\0009\0\1\0)\1\1\0=\1\6\0006\0\0\0009\0\1\0)\1\0\0=\1\a\0006\0\0\0009\0\1\0)\1\0\0=\1\b\0K\0\1\0\27nvim_tree_quit_on_open\25nvim_tree_auto_close\28nvim_tree_disable_netrw\1\4\0\0\t.git\17node_modules\v.cache\21nvim_tree_ignore\21nvim_tree_git_hl\24nvim_tree_auto_open\6g\bvim\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
 -- Config for: bubbly.nvim
 time([[Config for bubbly.nvim]], true)
-try_loadstring("\27LJ\2\n–\2\0\0\2\0\6\0\t6\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0005\1\5\0=\1\4\0K\0\1\0\1\n\0\0\tmode\rtruncate\tpath\vbranch\fsignify\bcoc\fdivisor\rfiletype\rprogress\22bubbly_statusline\1\0\f\15foreground\f#c5cdd9\nwhite\f#c5cdd9\tcyan\f#5dbbc1\14lightgrey\f#57595e\vpurple\f#d38aea\tblue\f#6cb6eb\vyellow\f#deb974\ngreen\f#a0c980\bred\f#ec7279\rdarkgrey\f#404247\nblack\f#3e4249\15background\f#34343c\19bubbly_palette\6g\bvim\0", "config", "bubbly.nvim")
+try_loadstring("\27LJ\2\n–\2\0\0\2\0\6\0\t6\0\0\0009\0\1\0005\1\3\0=\1\2\0006\0\0\0009\0\1\0005\1\5\0=\1\4\0K\0\1\0\1\n\0\0\tmode\rtruncate\tpath\vbranch\fsignify\bcoc\fdivisor\rfiletype\rprogress\22bubbly_statusline\1\0\f\ngreen\f#a0c980\bred\f#ec7279\rdarkgrey\f#404247\nblack\f#3e4249\14lightgrey\f#57595e\15foreground\f#c5cdd9\nwhite\f#c5cdd9\tcyan\f#5dbbc1\vpurple\f#d38aea\tblue\f#6cb6eb\vyellow\f#deb974\15background\f#34343c\19bubbly_palette\6g\bvim\0", "config", "bubbly.nvim")
 time([[Config for bubbly.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\n€\1\0\0\3\0\t\0\0156\0\0\0009\0\1\0)\1\1\0=\1\2\0006\0\0\0009\0\1\0005\1\4\0=\1\3\0006\0\5\0'\2\6\0B\0\2\0029\0\a\0005\2\b\0B\0\2\1K\0\1\0\1\0\4\18disable_netrw\2\18open_on_setup\2\15auto_close\2\17hijack_netrw\2\nsetup\14nvim-tree\frequire\1\4\0\0\t.git\17node_modules\v.cache\21nvim_tree_ignore\21nvim_tree_git_hl\6g\bvim\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
 if should_profile then save_profiles() end
 
 end)
