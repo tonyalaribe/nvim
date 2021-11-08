@@ -7,10 +7,9 @@ if not packer_exists then
 	end
 
 	local directory = string.format(
-	'%s/site/pack/packer/opt/',
-	vim.fn.stdpath('data')
+    '%s/site/pack/packer/opt/',
+    vim.fn.stdpath('data')
 	)
-
 	vim.fn.mkdir(directory, 'p')
 
 	local git_clone_cmd = vim.fn.system(string.format(
@@ -21,64 +20,48 @@ if not packer_exists then
 
 	print(git_clone_cmd)
 	print("Henter packer.nvim...")
-
 	return
 end
 
 return require('packer').startup(function()
 	-- Packer can manage itself as an optional plugin
 	use {'wbthomason/packer.nvim', opt = true}
-  use 'norcalli/nvim.lua'
-  use 'neovim/nvim-lspconfig'
-  use 'kyazdani42/nvim-web-devicons'
+  --
+  -- use 'junegunn/vim-easy-align'
+  use 'norcalli/nvim-colorizer.lua'
+  -- use 'parsonsmatt/intero-neovim'
+  -- use {'mg979/vim-visual-multi', branch = 'master'}
+  use "onsails/lspkind-nvim"
+  use "rafamadriz/friendly-snippets"
   use 'airblade/vim-rooter'
   use 'brooth/far.vim'
-  use {'kyazdani42/nvim-tree.lua', config = function()
-    vim.g.nvim_tree_git_hl = 1
-    vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache' }
-    require'nvim-tree'.setup {
-      open_on_setup = true,
-      disable_netrw = true,
-      hijack_netrw        = true,
-      auto_close = true,
-    }
-  end}
-  use 'olimorris/onedark.nvim'
-  -- use 'navarasu/onedark.nvim'
-  --
-  -- use 'RRethy/nvim-base16'
-
-  -- use 'siduck76/nvim-base16.lua'
-  -- use 'chriskempson/base16-vim'
-  -- use 'christianchiarulli/nvcode-color-schemes.vim'
-
-  use 'hrsh7th/cmp-nvim-lsp'
+  use 'github/copilot.vim'
   use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lua'
   use 'hrsh7th/cmp-path'
-  -- For vsnip user.
+  use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/vim-vsnip'
-  use "rafamadriz/friendly-snippets"
-
-
+  use 'kyazdani42/nvim-web-devicons'
+  use 'mhinz/vim-startify'
+  use 'neovim/nvim-lspconfig'
+  use 'neovimhaskell/haskell-vim'
+  use 'norcalli/nvim.lua'
+  use 'nvim-lua/lsp-status.nvim'
+  use 'olimorris/onedarkpro.nvim'
+  use 'romgrk/barbar.nvim'
+  use 'sbdchd/neoformat'
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
-  use 'nvim-lua/lsp-status.nvim'
-  use 'sbdchd/neoformat'
-  use {'prettier/vim-prettier', run = 'yarn install'}
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-  -- use 'norcalli/nvim-colorizer.lua'
-  use 'mhinz/vim-startify'
-  use 'romgrk/barbar.nvim'
   use 'vim-scripts/indentLine.vim'
-  use 'neovimhaskell/haskell-vim'
-  -- use 'parsonsmatt/intero-neovim'
-  -- use 'junegunn/vim-easy-align'
-  -- use {'mg979/vim-visual-multi', branch = 'master'}
-  -- use 'norcalli/snippets.nvim'
-  -- use 'hrsh7th/nvim-compe'
-  use "onsails/lspkind-nvim"
+  use {'junegunn/fzf', dir = '~/.fzf', run = './install --all'}
+  use {'junegunn/fzf.vim'}
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use {'prettier/vim-prettier', run = 'yarn install'}
+  use {'ojroques/nvim-lspfuzzy'}
+  use {'ndmitchell/ghcid',rtp = 'plugins/nvim'}
   use {
     'tami5/lspsaga.nvim',
     config = function()
@@ -86,19 +69,8 @@ return require('packer').startup(function()
     end
   }
   use {
-    'ndmitchell/ghcid',
-    rtp = 'plugins/nvim',
-  }
-  use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
-  }
-  use {
-    'ojroques/nvim-lspfuzzy',
-    requires = {
-      {'junegunn/fzf', dir = '~/.fzf', run = './install --all'},
-      {'junegunn/fzf.vim'},  -- to enable preview (optional)
-    },
   }
   use {
     'lewis6991/gitsigns.nvim',
@@ -137,17 +109,23 @@ return require('packer').startup(function()
       'progress',
     }
   end}
+  use {'kyazdani42/nvim-tree.lua', config = function()
+    vim.g.nvim_tree_git_hl = 1
+    vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache' }
+    require'nvim-tree'.setup {
+      open_on_setup = true,
+      disable_netrw = true,
+      hijack_netrw        = true,
+      auto_close = true,
+    }
+  end}
   use {
     "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
     config = function()
       require("trouble").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
         auto_open = true,
-        auto_close = true,
+        auto_close = false,
       }
     end
   }
-  end)
+end)

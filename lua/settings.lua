@@ -222,8 +222,9 @@ nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
-"let g:onedark_style = 'deep'
-"colorscheme onedark
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+"let g:copilot_no_tab_map = v:true
+
 ]], false)
 
 vim.g.bubbly_tabline = 1
@@ -232,4 +233,7 @@ vim.g.nvcode_termcolors=256
 vim.cmd('set norelativenumber')
 vim.cmd('set nornu')
 
-require('onedark').load()
+local cmd = vim.cmd
+
+
+require('onedarkpro').load()

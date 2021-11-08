@@ -27,15 +27,27 @@ local cmp = require'cmp'
       ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
     },
     sources = {
+      { name = 'nvim_lua' },
       { name = 'nvim_lsp' },
-
       -- For vsnip user.
       { name = 'vsnip' },
-
-      { name = 'buffer' },
+      { name = 'buffer', keyword_length = 2 },
       { name = 'path' },
-
     }
+  })
+  require'cmp'.setup.cmdline('/', {
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp_document_symbol' }
+    }, {
+      { name = 'buffer' }
+    })
+  })
+  cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
   })
 
 local saga = require 'lspsaga'
@@ -110,7 +122,7 @@ end
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = { "rust_analyzer", "tsserver", "gopls", "hls", }
+local servers = { "rust_analyzer", "tsserver", "gopls", "hls", "tailwindcss"}
 local capabilities = lsp_status.capabilities
 -- capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
